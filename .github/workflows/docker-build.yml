@@ -36,7 +36,7 @@ jobs:
         run: ls -al ${{ env.GITHUB_WORKSPACE }}
       -
         name: Image digest
-        run: ls -al ${{ env.GITHUB_WORKSPACE }}/cors-anywhere
+        run: ls -al ./cors-anywhere
       -
         name: Build and push
         id: docker_build
@@ -44,8 +44,8 @@ jobs:
         with:
           push: true
           tags: yeradon/cors-anywhere:latest
-          context: ${{ env.GITHUB_WORKSPACE }}/cors-anywhere
-          file: ${{ env.GITHUB_WORKSPACE }}/Dockerfile
+          context: ./cors-anywhere
+          file: ./Dockerfile
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
