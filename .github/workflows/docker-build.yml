@@ -29,24 +29,12 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
       -
-        name: Image digest
-        run: ls -al
-      -
-        name: Image digest
-        run: ls -al ${{ env.GITHUB_WORKSPACE }}
-      -
-        name: Image digest
-        run: echo ${{ env.GITHUB_WORKSPACE }}
-      -
-        name: Image digest
-        run: ls -al ./cors-anywhere
-      -
         name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: yeradon/cors-anywhere:latest
+          tags: ghcr.io/yeradon/cors-anywhere:latest
           context: ./cors-anywhere
           file: ./Dockerfile
       -
