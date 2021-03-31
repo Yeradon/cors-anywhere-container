@@ -36,6 +36,9 @@ jobs:
         run: ls -al ${{ env.GITHUB_WORKSPACE }}
       -
         name: Image digest
+        run: echo ${{ env.GITHUB_WORKSPACE }}
+      -
+        name: Image digest
         run: ls -al ./cors-anywhere
       -
         name: Build and push
