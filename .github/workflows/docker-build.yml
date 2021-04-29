@@ -11,7 +11,7 @@ jobs:
         name: Checkout cors-anywhere repository
         uses: actions/checkout@v2
         with: 
-          repository: Rob--W/cors-anywhere
+          repository: yeradon/cors-anywhere
           path: cors-anywhere
 
       -
